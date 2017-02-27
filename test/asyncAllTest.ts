@@ -1,5 +1,3 @@
-/* tslint:disable:no-empty */
-/* tslint:disable:whitespace */
 import { script } from 'lab';
 import { expect } from 'chai';
 import { Task }   from '../src/lib/asyncAll';
