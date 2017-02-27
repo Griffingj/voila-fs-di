@@ -104,7 +104,7 @@ promise.then(console.log);
 And this is what the integration looks like.
 
 ```javascript
-import fsGraph from './index';
+import fsGraph from 'voila-fs-di';
 import di      from 'voila-di';
 
 const promise = fsGraph({
