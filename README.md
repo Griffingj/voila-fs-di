@@ -9,7 +9,7 @@ Common usage, with main.js as follows.
 If using a build step, the globs should be written to be correct in the compiled code
 
 ```javascript
-const promise = fsGraphFactory({
+const promise = fsGraph({
   globs: [
     `src/controllers/**/*Controller.{js,ts}`,
     `src/dao/**/*Dao.{js,ts}`,
@@ -47,6 +47,11 @@ export default function resourceController(resourceService) {
   };
 }
 ```
+
+`fsGraph` expects that modules that match the glob patterns export a function as `module.exports` 
+or `default`. The function are passed to the `deriveKey` to determine the key. The function 
+parameters are parsed and should coincide with the other keys in the graph--this does not work
+with compiled destructuring.
 
 resourceService.js
 ```javascript
