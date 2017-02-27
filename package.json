@@ -1,0 +1,51 @@
+{
+  "name": "voila-fs-di",
+  "version": "0.1.0",
+  "description": "A library for creating a di graph from modules on the file system",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Griffingj/voila-fs-di.git"
+  },
+  "license": "MIT",
+  "author": "John Griffing",
+  "main": ".build/index.js",
+  "types": ".build/index.d.ts",
+  "files": [
+    ".build/"
+  ],
+  "scripts": {
+    "build": "tsc --pretty",
+    "lint": "tslint --project . --format msbuild",
+    "prepublish": "tsc --pretty",
+    "report-cov": "lab --coverage -r lcov | codeclimate-test-reporter",
+    "start": "ts-node ./src/main.ts",
+    "test": "lab",
+    "test-cov": "lab --coverage",
+    "typecheck": "tsc --pretty --noEmit",
+    "validate": "npm ls"
+  },
+  "devDependencies": {
+    "@types/glob": "^5.0.30",
+    "@types/chai": "^3.4.34",
+    "@types/node": "^6.0.46",
+    "@types/sinon": "^1.16.31",
+    "chai": "^3.5.0",
+    "codeclimate-test-reporter": "^0.3.3",
+    "git-validate": "^2.2.1",
+    "lab": "^12.1.0",
+    "sinon": "^1.17.6",
+    "ts-node": "^1.7.2",
+    "tslint": "^3.15.1",
+    "typescript": "^2.1.4",
+    "voila-di": "^0.12.0"
+  },
+  "pre-commit": [
+    "test",
+    "lint",
+    "validate",
+    "typecheck"
+  ],
+  "dependencies": {
+    "glob": "^7.1.1"
+  }
+}
