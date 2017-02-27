@@ -12,7 +12,7 @@ If using a build step, the globs should be written to be correct in the compiled
 const promise = fsGraph({
   globs: [
     `src/controllers/**/*Controller.{js,ts}`,
-    `src/dao/**/*Dao.{js,ts}`,
+    `src/daos/**/*Dao.{js,ts}`,
     `src/services/**/*Service.{js,ts}`
   ],
   deriveKey: func => func.name
@@ -87,7 +87,7 @@ import fsGraph from 'voila-fs-di';
 const promise = fsGraph({
   globs: [
     `src/controllers/**/*Controller.{js,ts}`,
-    `src/dao/**/*Dao.{js,ts}`,
+    `src/daos/**/*Dao.{js,ts}`,
     `src/services/**/*Service.{js,ts}`
   ],
   deriveKey: func => func.name
