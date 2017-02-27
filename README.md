@@ -6,7 +6,7 @@
 A library for creating a DI graph from modules on the file system
 
 Common usage, with main.js as follows.  
-If using a build step, the globs should be written to be correct in the compiled code
+If using a build step, the globs should be written to be correct in the transpiled code
 
 ```javascript
 const promise = fsGraph({
@@ -49,9 +49,9 @@ export default function resourceController(resourceService) {
 ```
 
 `fsGraph` expects that modules that match the glob patterns export a function as `module.exports` 
-or `default`. The function are passed to the `deriveKey` option to determine the di key. The 
+or `default`. Each function is passed to the `deriveKey` option to determine its di key. The 
 function arguments are parsed and should coincide with the other keys in the graph--this does not 
-work with compiled destructuring.
+work with transpiled destructuring.
 
 resourceService.js
 ```javascript
