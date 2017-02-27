@@ -49,9 +49,9 @@ export default function resourceController(resourceService) {
 ```
 
 `fsGraph` expects that modules that match the glob patterns export a function as `module.exports` 
-or `default`. The function are passed to the `deriveKey` to determine the key. The function 
-parameters are parsed and should coincide with the other keys in the graph--this does not work
-with compiled destructuring.
+or `default`. The function are passed to the `deriveKey` option to determine the di key. The 
+function arguments are parsed and should coincide with the other keys in the graph--this does not 
+work with compiled destructuring.
 
 resourceService.js
 ```javascript
