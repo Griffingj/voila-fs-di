@@ -3,5 +3,5 @@ ratings:
    - "src/**/*"
 
 engines:
-  tslint:
+  tslint:beta:
     enabled: true
