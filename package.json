@@ -1,6 +1,6 @@
 {
   "name": "voila-fs-di",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "description": "A library for creating a di graph from modules on the file system",
   "repository": {
     "type": "git",
