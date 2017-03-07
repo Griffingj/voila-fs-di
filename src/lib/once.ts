@@ -1,10 +1,8 @@
-const doNothing = () => undefined;
+export default function once(task: Function) {
+  let action = task;
 
-export default function once(doOnce: Function) {
-  let action = doOnce;
-
-  return (...args) => {
-    action(...args);
-    action = doNothing;
+  return function (...args) {
+    action.apply(this, args);
+    action = () => undefined;
   };
 }
