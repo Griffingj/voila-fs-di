@@ -1,2 +1,0 @@
-- Add warnings when a glob doesn't match anything
-- Maybe add logger function to options

@@ -8,12 +8,20 @@ import { ensureStrictGraph } from 'voila-di';
 
 export type Options = {
   globs: string[];
-  deriveKey: (func: Function) => string;
+  deriveKey(func: Function): string;
+  logger?(message: string): void;
 }
 
-export default function fsGraphFactory({ globs, deriveKey }: Options): Promise<StrictGraph> {
+export default function fsGraphFactory({ globs, deriveKey, logger }: Options): Promise<StrictGraph> {
   const tasks = globs.map(glob => {
-    return (callback) => Glob(glob, { absolute: true } as any, callback);
+    return (callback) => {
+      Glob(glob, { absolute: true } as any, (error, matches) => {
+        if (logger && !matches.length) {
+          logger(`Warning, glob "${glob}" failed to match anything.`);
+        }
+        callback(error, matches);
+      });
+    };
   });
 
   return asyncAll(tasks).then((results: any[]) => {
