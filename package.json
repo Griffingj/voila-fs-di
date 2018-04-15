@@ -16,7 +16,7 @@
   "scripts": {
     "build": "tsc --pretty",
     "lint": "tslint --project . --format msbuild",
-    "prepublish": "tsc --pretty",
+    "prepare": "tsc --pretty",
     "report-cov": "lab --coverage -r lcov | codeclimate-test-reporter",
     "start": "ts-node ./src/main.ts",
     "test": "lab",
@@ -25,10 +25,10 @@
     "validate": "npm ls"
   },
   "devDependencies": {
-    "@types/glob": "^5.0.30",
-    "@types/chai": "^3.4.34",
-    "@types/node": "^6.0.46",
-    "@types/sinon": "^1.16.31",
+    "@types/chai": "^3.5.2",
+    "@types/glob": "^5.0.35",
+    "@types/node": "^6.0.106",
+    "@types/sinon": "^1.16.36",
     "chai": "^3.5.0",
     "codeclimate-test-reporter": "^0.3.3",
     "git-validate": "^2.2.1",
@@ -36,8 +36,8 @@
     "sinon": "^1.17.6",
     "ts-node": "^1.7.2",
     "tslint": "^3.15.1",
-    "typescript": "^2.1.4",
-    "voila-di": "^0.12.0"
+    "typescript": "^2.8.1",
+    "voila-di": "3.0.0"
   },
   "pre-commit": [
     "test",
@@ -46,6 +46,6 @@
     "typecheck"
   ],
   "dependencies": {
-    "glob": "^7.1.1"
+    "glob": "^7.1.2"
   }
 }
